@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SMARTDEVICES.COM</title>
-  <meta name="description" content="SMARTDEVICES.COM — The category-defining domain for the next generation of intelligent hardware." />
+  <meta name="description" content="SMARTDEVICES.COM — The category-defining domain for the next generation of intelligent hardware. Available for acquisition." />
   <meta name="robots" content="index,follow" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="SMARTDEVICES.COM" />
-  <meta property="og:description" content="The category-defining domain for the next generation of intelligent hardware." />
+  <meta property="og:description" content="The category-defining domain for the next generation of intelligent hardware. Available for acquisition." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://smartdevices.com/" />
 
@@ -28,7 +29,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
@@ -63,7 +64,14 @@
       max-width: 44ch;
       font-size: clamp(15px, 2.1vw, 18px);
       line-height: 1.6;
-      color: var(--fg);
+    }
+
+    .availability{
+      margin: 12px auto 0;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .context{
@@ -86,11 +94,27 @@
       max-width: 50ch;
       font-size: 16px;
       line-height: 1.8;
-      color: var(--fg);
     }
 
     .body p{
       margin: 0 0 14px 0;
+    }
+
+    .stewardship{
+      margin: 30px auto 0;
+      max-width: 56ch;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .stewardship .label{
+      color: var(--fg);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 10px;
     }
 
     .footer{
@@ -98,6 +122,15 @@
       color: var(--muted);
       font-size: 13px;
       line-height: 1.8;
+    }
+
+    .footer .label{
+      color: var(--fg);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 6px;
     }
 
     .email a{
@@ -109,6 +142,13 @@
 
     .email a:hover{
       border-bottom-color: var(--hairline);
+    }
+
+    .qualified{
+      margin-top: 8px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
     }
 
     @media (max-width: 360px){
@@ -126,27 +166,38 @@
         The category-defining domain for the next generation of intelligent hardware.
       </p>
 
+      <div class="availability">Available for acquisition</div>
+
       <p class="context">
-        At the intersection of AI, hardware, and everyday life.
+        At the intersection of AI, hardware and everyday life.
       </p>
 
-      <div class="rule" role="presentation"></div>
+      <div class="rule"></div>
 
       <div class="body">
         <p>
-          From edge AI and robotics to health, energy, and consumer devices —
+          From edge AI and robotics to health, energy and consumer devices —
           every smart product eventually needs a home.
         </p>
         <p>
           This one already has the name.
         </p>
+
+        <div class="stewardship">
+          <div class="label">Stewardship opportunity</div>
+          <div>
+            SmartDevices.com is available for acquisition by a founder, company, or institution aligned with shaping
+            the future of intelligent products.
+          </div>
+        </div>
       </div>
 
       <footer class="footer">
-        <div>Available for acquisition</div>
+        <div class="label">Inquiries</div>
         <div class="email">
           <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
         </div>
+        <div class="qualified">Qualified inquiries welcomed.</div>
       </footer>
     </section>
   </main>
