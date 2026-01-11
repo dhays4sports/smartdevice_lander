@@ -111,19 +111,26 @@
       padding-bottom: 2px;
     }
 
-    .email a:hover{
-      border-bottom-color: var(--hairline);
-    }
+    .email a:hover{ border-bottom-color: var(--hairline); }
 
-    /* Language toggle (CSS only) */
+    /* Language toggle (CSS only via :target). Default: English. */
     .lang{ display: none; }
-    #en.lang{ display: block; }
+    #en.lang{ display: block; } /* default */
 
+    /* If Japanese targeted, show JP and hide others */
     #jp:target{ display: block; }
-    #jp:target ~ #en{ display: none; }
+    #jp:target ~ #en,
+    #jp:target ~ #ko{ display: none; }
 
+    /* If Korean targeted, show KO and hide others */
+    #ko:target{ display: block; }
+    #ko:target ~ #en,
+    #ko:target ~ #jp{ display: none; }
+
+    /* If English targeted, show EN and hide others */
     #en:target{ display: block; }
-    #en:target ~ #jp{ display: none; }
+    #en:target ~ #jp,
+    #en:target ~ #ko{ display: none; }
 
     .lang-toggle{
       margin-top: 18px;
@@ -140,9 +147,7 @@
       padding-bottom: 2px;
     }
 
-    .lang-toggle a:hover{
-      border-bottom-color: var(--hairline);
-    }
+    .lang-toggle a:hover{ border-bottom-color: var(--hairline); }
 
     .sep{ padding: 0 10px; color: var(--hairline); }
 
@@ -156,7 +161,7 @@
   <main class="wrap">
     <section class="card">
 
-      <!-- Japanese -->
+      <!-- Japanese (lang=ja) -->
       <div id="jp" class="lang" lang="ja">
         <h1 class="headline">SMARTDEVICES.COM</h1>
 
@@ -185,13 +190,15 @@
           <div class="email">
             <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
           </div>
-          <div class="lang-toggle">
-            <a href="#en">English</a><span class="sep">|</span><a href="#jp">日本語</a>
+          <div class="lang-toggle" aria-label="Language toggle">
+            <a href="#en">English</a><span class="sep">|</span>
+            <a href="#jp">日本語</a><span class="sep">|</span>
+            <a href="#ko">한국어</a>
           </div>
         </footer>
       </div>
 
-      <!-- English (default) -->
+      <!-- English (default, lang=en) -->
       <div id="en" class="lang" lang="en">
         <h1 class="headline">SMARTDEVICES.COM</h1>
 
@@ -220,8 +227,47 @@
           <div class="email">
             <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
           </div>
-          <div class="lang-toggle">
-            <a href="#en">English</a><span class="sep">|</span><a href="#jp">日本語</a>
+          <div class="lang-toggle" aria-label="Language toggle">
+            <a href="#en">English</a><span class="sep">|</span>
+            <a href="#jp">日本語</a><span class="sep">|</span>
+            <a href="#ko">한국어</a>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Korean (lang=ko) -->
+      <div id="ko" class="lang" lang="ko">
+        <h1 class="headline">SMARTDEVICES.COM</h1>
+
+        <p class="subhead">
+          차세대 지능형 하드웨어를 대표하는 카테고리 도메인.
+        </p>
+
+        <p class="context">
+          AI, 하드웨어, 그리고 일상 생활의 교차점에서.
+        </p>
+
+        <div class="rule"></div>
+
+        <div class="body">
+          <p>
+            엣지 AI와 로보틱스부터 헬스케어, 에너지, 소비자 기기까지 —
+            모든 스마트 제품에는 결국 ‘거점’이 필요합니다.
+          </p>
+          <p>
+            그 이름은 이미 여기에 있습니다.
+          </p>
+        </div>
+
+        <footer class="footer">
+          <div>인수 문의</div>
+          <div class="email">
+            <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
+          </div>
+          <div class="lang-toggle" aria-label="Language toggle">
+            <a href="#en">English</a><span class="sep">|</span>
+            <a href="#jp">日本語</a><span class="sep">|</span>
+            <a href="#ko">한국어</a>
           </div>
         </footer>
       </div>
