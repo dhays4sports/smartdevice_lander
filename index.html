@@ -5,24 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SMARTDEVICES.COM</title>
   <meta name="description" content="SMARTDEVICES.COM — The category-defining domain for the next generation of intelligent hardware." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="SMARTDEVICES.COM" />
-  <meta property="og:description" content="The category-defining domain for the next generation of intelligent hardware." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://smartdevices.com/" />
-
-  <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self';
-             img-src 'self' data:;
-             style-src 'self' 'unsafe-inline';
-             script-src 'self';
-             base-uri 'self';
-             form-action 'self';
-             frame-ancestors 'none';
-             upgrade-insecure-requests">
 
   <style>
     :root{
@@ -33,19 +15,12 @@
       --maxw: 860px;
     }
 
-    html, body { height: 100%; }
+    html, body { height: 100%; margin:0; }
 
     body{
-      margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .wrap{
-      min-height: 100%;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       display: grid;
       place-items: center;
       padding: clamp(28px, 5vw, 64px);
@@ -55,7 +30,6 @@
       width: 100%;
       max-width: var(--maxw);
       text-align: center;
-      padding: clamp(18px, 2.5vw, 28px);
     }
 
     .headline{
@@ -69,16 +43,15 @@
     }
 
     .subhead{
-      margin: 0 auto;
       max-width: 48ch;
-      font-size: clamp(15px, 2.1vw, 18px);
+      margin: 0 auto;
+      font-size: clamp(15px, 2vw, 18px);
       line-height: 1.6;
     }
 
     .context{
-      margin: 22px auto 0;
+      margin-top: 22px;
       font-size: 13px;
-      line-height: 1.6;
       color: var(--muted);
       font-style: italic;
     }
@@ -91,65 +64,53 @@
     }
 
     .body{
-      margin: 0 auto;
       max-width: 56ch;
+      margin: 0 auto;
       font-size: 16px;
       line-height: 1.8;
     }
 
     .footer{
       margin-top: 42px;
-      color: var(--muted);
       font-size: 13px;
-      line-height: 1.8;
+      color: var(--muted);
     }
 
     .email a{
       color: var(--muted);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
     }
 
     .email a:hover{ border-bottom-color: var(--hairline); }
 
-    /* Language toggle (CSS only via :target). Default: English. */
-    .lang{ display: none; }
-    #en.lang{ display: block; } /* default */
+    /* LANGUAGE SYSTEM */
 
-    /* If Japanese targeted, show JP and hide others */
-    #jp:target{ display: block; }
-    #jp:target ~ #en,
-    #jp:target ~ #ko{ display: none; }
+    .lang { display: none; }
+    .lang.default { display: block; }
 
-    /* If Korean targeted, show KO and hide others */
-    #ko:target{ display: block; }
-    #ko:target ~ #en,
-    #ko:target ~ #jp{ display: none; }
+    #jp:target,
+    #ko:target { display: block; }
 
-    /* If English targeted, show EN and hide others */
-    #en:target{ display: block; }
-    #en:target ~ #jp,
-    #en:target ~ #ko{ display: none; }
+    #jp:target ~ .default,
+    #ko:target ~ .default { display: none; }
 
     .lang-toggle{
       margin-top: 18px;
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
     }
 
     .lang-toggle a{
       color: var(--muted);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
+      padding: 0 8px;
     }
 
-    .lang-toggle a:hover{ border-bottom-color: var(--hairline); }
-
-    .sep{ padding: 0 10px; color: var(--hairline); }
+    .lang-toggle a:hover{
+      border-bottom: 1px solid var(--hairline);
+    }
 
     @media (max-width: 360px){
       .headline{ white-space: normal; }
@@ -158,121 +119,79 @@
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
 
-      <!-- Japanese (lang=ja) -->
-      <div id="jp" class="lang" lang="ja">
-        <h1 class="headline">SMARTDEVICES.COM</h1>
+  <section class="card">
 
-        <p class="subhead">
-          次世代のインテリジェント・ハードウェアを象徴する、カテゴリー・ドメイン。
-        </p>
+    <!-- Japanese -->
+    <div id="jp" class="lang" lang="ja">
+      <h1 class="headline">SMARTDEVICES.COM</h1>
 
-        <p class="context">
-          AI、ハードウェア、そして日常生活の交差点に。
-        </p>
+      <p class="subhead">次世代のインテリジェント・ハードウェアを象徴する、カテゴリー・ドメイン。</p>
+      <p class="context">AI、ハード웨어, そして日常生活の交差点に。</p>
 
-        <div class="rule"></div>
+      <div class="rule"></div>
 
-        <div class="body">
-          <p>
-            エッジAIやロボティクスから、ヘルスケア、エネルギー、コンシューマーデバイスまで——
-            あらゆるスマートプロダクトには、いずれ“拠点”が必要になります。
-          </p>
-          <p>
-            その“名前”は、すでにここにあります。
-          </p>
-        </div>
-
-        <footer class="footer">
-          <div>取得のご相談</div>
-          <div class="email">
-            <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
-          </div>
-          <div class="lang-toggle" aria-label="Language toggle">
-            <a href="#en">English</a><span class="sep">|</span>
-            <a href="#jp">日本語</a><span class="sep">|</span>
-            <a href="#ko">한국어</a>
-          </div>
-        </footer>
+      <div class="body">
+        <p>エッジAIやロボティクスから、ヘルスケア、エネルギー、コンシューマーデバイスまで——あらゆるスマートプロダクトには、いずれ“拠点”が必要になります。</p>
+        <p>その“名前”は、すでにここにあります。</p>
       </div>
 
-      <!-- English (default, lang=en) -->
-      <div id="en" class="lang" lang="en">
-        <h1 class="headline">SMARTDEVICES.COM</h1>
-
-        <p class="subhead">
-          The category-defining domain for the next generation of intelligent hardware.
-        </p>
-
-        <p class="context">
-          At the intersection of AI, hardware, and everyday life.
-        </p>
-
-        <div class="rule"></div>
-
-        <div class="body">
-          <p>
-            From edge AI and robotics to health, energy, and consumer devices —
-            every smart product eventually needs a home.
-          </p>
-          <p>
-            This one already has the name.
-          </p>
+      <footer class="footer">
+        <div>取得のご相談</div>
+        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
+        <div class="lang-toggle">
+          <a href="#en">English</a> | <a href="#jp">日本語</a> | <a href="#ko">한국어</a>
         </div>
+      </footer>
+    </div>
 
-        <footer class="footer">
-          <div>Available for acquisition</div>
-          <div class="email">
-            <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
-          </div>
-          <div class="lang-toggle" aria-label="Language toggle">
-            <a href="#en">English</a><span class="sep">|</span>
-            <a href="#jp">日本語</a><span class="sep">|</span>
-            <a href="#ko">한국어</a>
-          </div>
-        </footer>
+    <!-- Korean -->
+    <div id="ko" class="lang" lang="ko">
+      <h1 class="headline">SMARTDEVICES.COM</h1>
+
+      <p class="subhead">차세대 지능형 하드웨어를 대표하는 카테고리 도메인.</p>
+      <p class="context">AI, 하드웨어, 그리고 일상 생활의 교차점에서.</p>
+
+      <div class="rule"></div>
+
+      <div class="body">
+        <p>엣지 AI와 로보틱스부터 헬스케어, 에너지, 소비자 기기까지 — 모든 스마트 제품에는 결국 ‘거점’이 필요합니다.</p>
+        <p>그 이름은 이미 여기에 있습니다.</p>
       </div>
 
-      <!-- Korean (lang=ko) -->
-      <div id="ko" class="lang" lang="ko">
-        <h1 class="headline">SMARTDEVICES.COM</h1>
-
-        <p class="subhead">
-          차세대 지능형 하드웨어를 대표하는 카테고리 도메인.
-        </p>
-
-        <p class="context">
-          AI, 하드웨어, 그리고 일상 생활의 교차점에서.
-        </p>
-
-        <div class="rule"></div>
-
-        <div class="body">
-          <p>
-            엣지 AI와 로보틱스부터 헬스케어, 에너지, 소비자 기기까지 —
-            모든 스마트 제품에는 결국 ‘거점’이 필요합니다.
-          </p>
-          <p>
-            그 이름은 이미 여기에 있습니다.
-          </p>
+      <footer class="footer">
+        <div>인수 문의</div>
+        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
+        <div class="lang-toggle">
+          <a href="#en">English</a> | <a href="#jp">日本語</a> | <a href="#ko">한국어</a>
         </div>
+      </footer>
+    </div>
 
-        <footer class="footer">
-          <div>인수 문의</div>
-          <div class="email">
-            <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
-          </div>
-          <div class="lang-toggle" aria-label="Language toggle">
-            <a href="#en">English</a><span class="sep">|</span>
-            <a href="#jp">日本語</a><span class="sep">|</span>
-            <a href="#ko">한국어</a>
-          </div>
-        </footer>
+    <!-- English (default) -->
+    <div id="en" class="lang default" lang="en">
+      <h1 class="headline">SMARTDEVICES.COM</h1>
+
+      <p class="subhead">The category-defining domain for the next generation of intelligent hardware.</p>
+      <p class="context">At the intersection of AI, hardware, and everyday life.</p>
+
+      <div class="rule"></div>
+
+      <div class="body">
+        <p>From edge AI and robotics to health, energy, and consumer devices — every smart product eventually needs a home.</p>
+        <p>This one already has the name.</p>
       </div>
 
-    </section>
-  </main>
+      <footer class="footer">
+        <div>Available for acquisition</div>
+        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
+        <div class="lang-toggle">
+          <a href="#en">English</a> | <a href="#jp">日本語</a> | <a href="#ko">한국어</a>
+        </div>
+      </footer>
+    </div>
+
+  </section>
+
 </body>
 </html>
