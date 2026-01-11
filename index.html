@@ -119,11 +119,16 @@
     .lang{ display: none; }
     #en.lang{ display: block; }
 
-    #jp:target{ display: block; }
-    #jp:target ~ #en{ display: none; }
+    #jp:target, #kr:target{ display: block; }
+    #jp:target ~ #en,
+    #jp:target ~ #kr{ display: none; }
+
+    #kr:target ~ #en,
+    #kr:target ~ #jp{ display: none; }
 
     #en:target{ display: block; }
-    #en:target ~ #jp{ display: none; }
+    #en:target ~ #jp,
+    #en:target ~ #kr{ display: none; }
 
     .lang-toggle{
       margin-top: 18px;
@@ -161,32 +166,71 @@
         <h1 class="headline">SMARTDEVICES.COM</h1>
 
         <p class="subhead">
-          次世代のインテリジェント・ハードウェアを象徴する、カテゴリー・ドメイン。
+          次世代のインテリジェント・ハード웨어를 상징하는 카테고리 도메인.
         </p>
 
         <p class="context">
-          AI、ハードウェア、そして日常生活の交差点に。
+          AI, 하드웨어, 그리고 일상의 교차점에서.
         </p>
 
         <div class="rule"></div>
 
         <div class="body">
           <p>
-            エッジAIやロボティクスから、ヘルスケア、エネルギー、コンシューマーデバイスまで——
-            あらゆるスマートプロダクトには、いずれ“拠点”が必要になります。
+            엣지 AI와 로보틱스부터 헬스케어, 에너지, 컨슈머 디바이스까지 —
+            모든 스마트 제품은 결국 하나의 ‘기반’이 필요합니다.
           </p>
           <p>
-            その“名前”は、すでにここにあります。
+            그 이름은 이미 여기에 있습니다.
           </p>
         </div>
 
         <footer class="footer">
-          <div>取得のご相談</div>
+          <div>취득 문의</div>
           <div class="email">
             <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
           </div>
           <div class="lang-toggle">
-            <a href="#en">English</a><span class="sep">|</span><a href="#jp">日本語</a>
+            <a href="#en">English</a><span class="sep">|</span>
+            <a href="#jp">日本語</a><span class="sep">|</span>
+            <a href="#kr">한국어</a>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Korean -->
+      <div id="kr" class="lang" lang="ko">
+        <h1 class="headline">SMARTDEVICES.COM</h1>
+
+        <p class="subhead">
+          차세대 지능형 하드웨어를 정의하는 글로벌 카테고리 도메인.
+        </p>
+
+        <p class="context">
+          AI, 하드웨어, 그리고 일상의 교차점에서.
+        </p>
+
+        <div class="rule"></div>
+
+        <div class="body">
+          <p>
+            엣지 AI와 로보틱스부터 헬스케어, 에너지, 소비자 디바이스까지 —
+            모든 스마트 제품은 결국 하나의 ‘본거지’가 필요합니다.
+          </p>
+          <p>
+            그 이름은 이미 여기에 있습니다.
+          </p>
+        </div>
+
+        <footer class="footer">
+          <div>인수 문의</div>
+          <div class="email">
+            <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
+          </div>
+          <div class="lang-toggle">
+            <a href="#en">English</a><span class="sep">|</span>
+            <a href="#jp">日本語</a><span class="sep">|</span>
+            <a href="#kr">한국어</a>
           </div>
         </footer>
       </div>
@@ -221,7 +265,9 @@
             <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
           </div>
           <div class="lang-toggle">
-            <a href="#en">English</a><span class="sep">|</span><a href="#jp">日本語</a>
+            <a href="#en">English</a><span class="sep">|</span>
+            <a href="#jp">日本語</a><span class="sep">|</span>
+            <a href="#kr">한국어</a>
           </div>
         </footer>
       </div>
