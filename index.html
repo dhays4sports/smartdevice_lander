@@ -4,102 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SMARTDEVICES.COM</title>
-
-  <meta name="description" content="SMARTDEVICES.COM — The category-defining domain for the next generation of intelligent hardware." />
+  <meta name="description" content="SMARTDEVICES.COM — The category-defining domain for the next generation of intelligent hardware. Privately held. Discreetly offered." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="SMARTDEVICES.COM" />
-  <meta property="og:description" content="The category-defining domain for the next generation of intelligent hardware." />
+  <meta property="og:description" content="The category-defining domain for the next generation of intelligent hardware. Privately held. Discreetly offered." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://smartdevices.com/" />
 
   <style>
-    :root{
-      --bg: #ffffff;
-      --fg: #0f0f10;
-      --muted: #5a5a5f;
-      --hairline: rgba(15,15,16,0.10);
-      --maxw: 860px;
-    }
-
-    html, body { height: 100%; }
-
     body{
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      margin:0;
+      background:#ffffff;
+      color:#0f0f10;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      text-align:center;
+      padding:40px;
     }
-
-    .wrap{
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      padding: clamp(28px, 5vw, 64px);
+    .card{max-width:860px;}
+    h1{
+      font-size:56px;
+      letter-spacing:.06em;
+      margin-bottom:20px;
     }
-
-    .card{
-      width: 100%;
-      max-width: var(--maxw);
-      text-align: center;
-      padding: clamp(18px, 2.5vw, 28px);
-    }
-
-    .headline{
-      font-weight: 750;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: clamp(34px, 6vw, 56px);
-      line-height: 1.05;
-      margin: 0 0 18px 0;
-      white-space: nowrap;
-    }
-
-    .subhead{
-      margin: 0 auto;
-      max-width: 44ch;
-      font-size: clamp(15px, 2.1vw, 18px);
-      line-height: 1.6;
-    }
-
-    .context{
-      margin: 22px auto 0;
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    .rule{
-      width: min(420px, 60%);
-      height: 1px;
-      background: var(--hairline);
-      margin: 32px auto;
-    }
-
-    .body{
-      margin: 0 auto;
-      max-width: 50ch;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    .body p{
-      margin: 0 0 14px 0;
-    }
-
-    .scarcity{
-      margin-top: 22px;
-      font-size: 14px;
-      color: var(--muted);
-      font-style: italic;
-    }
-
+    .sub{font-size:18px;line-height:1.6;}
+    .note,.scarcity,.steward{margin-top:20px;color:#5a5a5f;letter-spacing:.14em;text-transform:uppercase;font-size:12px;}
+    .body{margin-top:40px;font-size:16px;line-height:1.8;}
+    footer{margin-top:50px;font-size:13px;color:#5a5a5f;}
+    a{color:#5a5a5f;text-decoration:none;}
+  
     /* Inquiry form */
-    .inquiry{ margin: 36px auto 0; max-width: 520px; }
+    .inquiry{ margin: 34px auto 0; max-width: 520px; }
     .fields{ display: grid; gap: 10px; }
 
     .inquiry input, .inquiry textarea{
@@ -112,8 +51,8 @@
       font: inherit;
       font-size: 14px;
       outline: none;
+      box-sizing: border-box;
     }
-
     .inquiry textarea{ resize: vertical; min-height: 120px; }
 
     .inquiry input:focus, .inquiry textarea:focus{
@@ -132,102 +71,63 @@
       letter-spacing: 0.02em;
       cursor: pointer;
     }
-
     .inquiry button:hover{ opacity: 0.92; }
 
     .formnote{
       margin-top: 10px;
-      color: var(--muted);
+      color: #5a5a5f;
       font-size: 12px;
       line-height: 1.6;
     }
 
     .status{
       margin: 10px 0 0;
-      color: var(--muted);
+      color: #5a5a5f;
       font-size: 12px;
       line-height: 1.6;
     }
 
-    .footer{
-      margin-top: 42px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .footer strong{ color: var(--fg); font-weight: 600; }
-
-    .email a{
-      color: var(--muted);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    .email a:hover{
-      border-bottom-color: var(--hairline);
-    }
-
-    @media (max-width: 360px){
-      .headline{ white-space: normal; }
-    }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
+  <div class="card">
+    <h1>SMARTDEVICES.COM</h1>
+    <div class="sub">The category-defining domain for the next generation of intelligent hardware.</div>
 
-      <h1 class="headline">SMARTDEVICES.COM</h1>
+    <div class="note">Privately held. Discreetly offered.</div>
+    <div class="scarcity">A singular digital asset. One owner. Global reach.</div>
 
-      <p class="subhead">
-        The category-defining domain for the next generation of intelligent hardware.
-      </p>
+    <div class="body">
+      <p>From AI and robotics to health, energy, and consumer devices — every smart product eventually needs a home.</p>
+      <p>This one already has the name.</p>
+    </div>
 
-      <p class="context">
-        At the intersection of AI, hardware, and everyday life.
-      </p>
+    <div class="steward">Stewardship Opportunity</div>
+    <p>Only one organization will own the definitive identity of this space.</p>
 
-      <div class="rule"></div>
-
-      <div class="body">
-        <p>
-          From edge AI and robotics to health, energy, and consumer devices —
-          every smart product eventually needs a home.
-        </p>
-        <p>
-          This one already has the name.
-        </p>
+    
+    <form class="inquiry" action="/api/inquiry" method="POST">
+      <div class="fields">
+        <input name="name" type="text" placeholder="Name" autocomplete="name" required>
+        <input name="company" type="text" placeholder="Company" autocomplete="organization" required>
+        <input name="email" type="email" placeholder="Email" autocomplete="email" required>
+        <textarea name="message" rows="4" placeholder="Intended use / acquisition context" required></textarea>
       </div>
 
-      <p class="scarcity">
-        Premium category domain. One owner. One opportunity.
-      </p>
+      <button type="submit">Request acquisition brief</button>
+      <div class="formnote">Qualified inquiries only. Please include intended use.</div>
 
-      <!-- Inquiry Form -->
-      <form class="inquiry" action="/api/inquiry" method="POST">
-        <div class="fields">
-          <input name="name" type="text" placeholder="Name" required>
-          <input name="company" type="text" placeholder="Company" required>
-          <input name="email" type="email" placeholder="Email" required>
-          <textarea name="message" placeholder="Intended use / acquisition context" required></textarea>
-        </div>
+      <p class="status" aria-live="polite"></p>
+    </form>
 
-        <button type="submit">Request acquisition brief</button>
-        <div class="formnote">Qualified inquiries only. Please include intended use.</div>
-        <p class="status"></p>
-      </form>
 
-      <footer class="footer">
-        <div><strong>Available for acquisition</strong></div>
-        <div class="email">
-          <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
-        </div>
-      </footer>
-
-    </section>
-  </main>
+    <footer>
+      <div><strong>Inquiries</strong></div>
+      <div><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
+      <div>Qualified inquiries only.</div>
+    </footer>
+  </div>
 
   <script>
     (function () {
@@ -237,7 +137,7 @@
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const status = form.querySelector(".status");
-        status.textContent = "Sending…";
+        if (status) status.textContent = "Sending…";
 
         try {
           const res = await fetch(form.action, {
@@ -246,10 +146,10 @@
           });
 
           if (!res.ok) throw new Error("Bad response");
-          status.textContent = "Sent. Thank you — we’ll reply shortly.";
+          if (status) status.textContent = "Sent. Thank you — we’ll reply shortly.";
           form.reset();
         } catch {
-          status.textContent = "Couldn’t send right now. Please email contact@smartdevices.com.";
+          if (status) status.textContent = "Couldn’t send right now. Please email contact@smartdevices.com.";
         }
       });
     })();
