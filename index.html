@@ -60,6 +60,24 @@
   font-size:12px;
 }
 
+    /* Form panel container */
+.form-panel{
+  margin-top: 28px;
+  padding: 28px 26px 26px;
+  border-radius: 18px;
+  background: rgba(15,15,16,0.02);
+  border: 1px solid rgba(15,15,16,0.08);
+  box-shadow: 0 10px 28px rgba(15,15,16,0.04);
+}
+
+/* Slightly tighten on mobile */
+@media (max-width: 480px){
+  .form-panel{
+    padding: 22px 18px 20px;
+    border-radius: 14px;
+  }
+}
+
     .body{ margin-top:40px; font-size:16px; line-height:1.8; }
 
     footer{ margin-top:50px; font-size:13px; color:#5a5a5f; }
@@ -67,7 +85,10 @@
     a{ color:#5a5a5f; text-decoration:none; }
 
     /* Inquiry form */
-    .inquiry{ margin: 34px auto 0; max-width: 520px; }
+    .inquiry{
+  margin: 0 auto;
+  max-width: 520px;
+}
 
     .fields{ display: grid; gap: 10px; }
 
@@ -150,7 +171,8 @@
 
     <div class="confidential-note">Confidential acquisition inquiries only.</div>
    <!-- Inquiry Form -->
-<form id="inquiry-form" class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
+<div class="form-panel">
+  <form id="inquiry-form" class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
   <div class="fields">
     <input name="name" required placeholder="Full name" />
     <input name="company" required placeholder="Company" />
@@ -181,7 +203,8 @@
   <div class="status"></div>
   <div class="formnote">Qualified inquiries only. Please include intended use.</div>
 </form>
-
+  </form>
+</div>
     <footer>
       <div><strong>Inquiries</strong></div>
       <div><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
