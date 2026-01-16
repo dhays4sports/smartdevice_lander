@@ -1,127 +1,71 @@
-export async function onRequestPost({ request, env }) {
-  // CORS (safe defaults)
-  const headers = {
-    "content-type": "application/json; charset=utf-8",
-    "access-control-allow-origin": "https://smartdevices.com",
-    "access-control-allow-methods": "POST, OPTIONS",
-    "access-control-allow-headers": "content-type",
-  };
-
+export async function onRequestPost({ request }) {
   try {
-    const contentType = request.headers.get("content-type") || "";
+    // Parse form submission
+    const form = await request.formData();
 
-    let name = "";
-    let company = "";
-    let email = "";
-    let message = "";
-
-    // Accept either form posts or JSON posts
-    if (contentType.includes("application/json")) {
-      const data = await request.json();
-      name = String(data.name || "").trim();
-      company = String(data.company || "").trim();
-      email = String(data.email || "").trim();
-      message = String(data.message || "").trim();
-    } else {
-      const form = await request.formData();
-      name = String(form.get("name") || "").trim();
-      company = String(form.get("company") || "").trim();
-      email = String(form.get("email") || "").trim();
-      message = String(form.get("message") || "").trim();
-    }
+    const name = String(form.get("name") || "").trim();
+    const company = String(form.get("company") || "").trim();
+    const email = String(form.get("email") || "").trim();
+    const message = String(form.get("message") || "").trim();
 
     if (!name || !company || !email || !message) {
-      return new Response(JSON.stringify({ ok: false, error: "Missing fields." }), {
-        status: 400,
-        headers,
-      });
-    }
-
-    // Basic email sanity check (not perfect, but helps)
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return new Response(JSON.stringify({ ok: false, error: "Please enter a valid email." }), {
-        status: 400,
-        headers,
-      });
+      return json({ ok: false, error: "Missing required fields." }, 400);
     }
 
     if (message.length > 4000) {
-      return new Response(JSON.stringify({ ok: false, error: "Message too long." }), {
-        status: 400,
-        headers,
-      });
+      return json({ ok: false, error: "Message too long." }, 400);
     }
 
+    // Compose email
     const subject = `SmartDevices.com Inquiry — ${company}`;
-    const bodyText =
-`New inquiry from SmartDevices.com
+    const content =
+      `New inquiry from SmartDevices.com\n\n` +
+      `Name: ${name}\n` +
+      `Company: ${company}\n` +
+      `Email: ${email}\n\n` +
+      `Message:\n${message}\n\n` +
+      `---\nSent via SmartDevices.com inquiry form\n`;
 
-Name: ${name}
-Company: ${company}
-Email: ${email}
-
-Message:
-${message}
-
----
-Sent via SmartDevices.com inquiry form`;
-
-    // IMPORTANT:
-    // MailChannels can be picky about From domains.
-    // Start with a "from" that matches the destination domain.
-    // If this still fails, we’ll switch to a verified sender method.
-    const payload = {
-      personalizations: [
-        {
-          to: [{ email: "contact@smartdevices.com", name: "SmartDevices Inquiries" }],
-        },
-      ],
-      from: {
-        email: "contact@smartdevices.com",
-        name: "SmartDevices.com",
-      },
-      reply_to: { email, name },
-      subject,
-      content: [{ type: "text/plain", value: bodyText }],
-    };
-
+    // Send via MailChannels
     const resp = await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        personalizations: [
+          { to: [{ email: "contact@smartdevices.com", name: "SmartDevices Inquiries" }] },
+        ],
+        from: { email: "noreply@smartdevices.com", name: "SmartDevices.com" },
+        reply_to: { email, name },
+        subject,
+        content: [{ type: "text/plain", value: content }],
+      }),
     });
 
     const respText = await resp.text();
 
     if (!resp.ok) {
-      // Return the MailChannels error *to you* (still JSON), so you can debug without guessing.
-      return new Response(JSON.stringify({
-        ok: false,
-        error: `Mail send failed (${resp.status})`,
-        detail: respText.slice(0, 800),
-      }), {
-        status: 502,
-        headers,
-      });
+      // IMPORTANT: return the upstream status + text so you can debug
+      return json(
+        { ok: false, error: `MailChannels rejected: ${resp.status}`, detail: respText },
+        502
+      );
     }
 
-    return new Response(JSON.stringify({ ok: true }), { status: 200, headers });
+    return json({ ok: true }, 200);
   } catch (err) {
-    return new Response(JSON.stringify({ ok: false, error: "Server error." }), {
-      status: 500,
-      headers,
-    });
+    return json(
+      { ok: false, error: "Server error", detail: String(err && err.message ? err.message : err) },
+      500
+    );
   }
 }
 
-// Optional: handle OPTIONS preflight (some browsers/extensions trigger it)
-export async function onRequestOptions() {
-  return new Response(null, {
-    status: 204,
+function json(obj, status = 200) {
+  return new Response(JSON.stringify(obj), {
+    status,
     headers: {
-      "access-control-allow-origin": "https://smartdevices.com",
-      "access-control-allow-methods": "POST, OPTIONS",
-      "access-control-allow-headers": "content-type",
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "no-store",
     },
   });
 }
