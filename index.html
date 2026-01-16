@@ -18,18 +18,23 @@
 html, body { width: 100%; overflow-x: hidden; }
     
     body{
-      margin:0;
-      background:#ffffff;
-      color:#0f0f10;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      text-align:center;
-      padding:40px;
-    }
-    .card{ width: 100%; max-width: 860px; }
+  margin:0;
+  background:#ffffff;
+  color:#0f0f10;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  min-height:100vh;
+  text-align:center;
+  padding:40px;
+
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;   /* changed */
+}
+    .card{
+  width: 100%;
+  max-width: 860px;
+  margin: auto 0;          /* centers vertically in a safe way */
+}
     h1{
   font-size: clamp(32px, 8vw, 56px);
   letter-spacing: .06em;
