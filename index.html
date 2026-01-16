@@ -4,7 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SMARTDEVICES.COM</title>
+
   <meta name="description" content="SMARTDEVICES.COM — The category-defining domain for the next generation of intelligent hardware." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SMARTDEVICES.COM" />
+  <meta property="og:description" content="The category-defining domain for the next generation of intelligent hardware." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://smartdevices.com/" />
 
   <style>
     :root{
@@ -15,12 +23,19 @@
       --maxw: 860px;
     }
 
-    html, body { height: 100%; margin:0; }
+    html, body { height: 100%; }
 
     body{
+      margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap{
+      min-height: 100%;
       display: grid;
       place-items: center;
       padding: clamp(28px, 5vw, 64px);
@@ -30,6 +45,7 @@
       width: 100%;
       max-width: var(--maxw);
       text-align: center;
+      padding: clamp(18px, 2.5vw, 28px);
     }
 
     .headline{
@@ -43,15 +59,16 @@
     }
 
     .subhead{
-      max-width: 48ch;
       margin: 0 auto;
-      font-size: clamp(15px, 2vw, 18px);
+      max-width: 44ch;
+      font-size: clamp(15px, 2.1vw, 18px);
       line-height: 1.6;
     }
 
     .context{
-      margin-top: 22px;
+      margin: 22px auto 0;
       font-size: 13px;
+      line-height: 1.6;
       color: var(--muted);
       font-style: italic;
     }
@@ -64,18 +81,82 @@
     }
 
     .body{
-      max-width: 56ch;
       margin: 0 auto;
+      max-width: 50ch;
       font-size: 16px;
       line-height: 1.8;
     }
 
+    .body p{
+      margin: 0 0 14px 0;
+    }
+
+    .scarcity{
+      margin-top: 22px;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Inquiry form */
+    .inquiry{ margin: 36px auto 0; max-width: 520px; }
+    .fields{ display: grid; gap: 10px; }
+
+    .inquiry input, .inquiry textarea{
+      width: 100%;
+      border: 1px solid rgba(15,15,16,0.12);
+      background: #fff;
+      color: #0f0f10;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .inquiry textarea{ resize: vertical; min-height: 120px; }
+
+    .inquiry input:focus, .inquiry textarea:focus{
+      border-color: rgba(15,15,16,0.28);
+    }
+
+    .inquiry button{
+      margin-top: 12px;
+      width: 100%;
+      border: 1px solid rgba(15,15,16,0.16);
+      background: #0f0f10;
+      color: #fff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+
+    .inquiry button:hover{ opacity: 0.92; }
+
+    .formnote{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .status{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
     .footer{
       margin-top: 42px;
-      font-size: 13px;
       color: var(--muted);
+      font-size: 13px;
       line-height: 1.8;
     }
+
+    .footer strong{ color: var(--fg); font-weight: 600; }
 
     .email a{
       color: var(--muted);
@@ -84,42 +165,9 @@
       padding-bottom: 2px;
     }
 
-    .email a:hover{ border-bottom-color: var(--hairline); }
-
-    /* LANGUAGE SYSTEM */
-    .lang { display: none; }
-    .lang.default { display: block; }
-
-    /* Show the targeted language block */
-    #jp:target,
-    #ko:target,
-    #zh:target { display: block; }
-
-    /* Hide default when any non-default language is targeted */
-    #jp:target ~ .default,
-    #ko:target ~ .default,
-    #zh:target ~ .default { display: none; }
-
-    .lang-toggle{
-      margin-top: 18px;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .lang-toggle a{
-      color: var(--muted);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    .lang-toggle a:hover{
+    .email a:hover{
       border-bottom-color: var(--hairline);
     }
-
-    .sep{ padding: 0 10px; color: var(--hairline); }
 
     @media (max-width: 360px){
       .headline{ white-space: normal; }
@@ -128,101 +176,18 @@
 </head>
 
 <body>
-  <section class="card">
+  <main class="wrap">
+    <section class="card">
 
-    <!-- Japanese -->
-    <div id="jp" class="lang" lang="ja">
       <h1 class="headline">SMARTDEVICES.COM</h1>
 
-      <p class="subhead">次世代のインテリジェント・ハードウェアを象徴する、カテゴリー・ドメイン。</p>
-      <p class="context">AI、ハードウェア、そして日常生活の交差点に。</p>
+      <p class="subhead">
+        The category-defining domain for the next generation of intelligent hardware.
+      </p>
 
-      <div class="rule"></div>
-
-      <div class="body">
-        <p>
-          エッジAIやロボティクスから、ヘルスケア、エネルギー、コンシューマーデバイスまで——
-          あらゆるスマートプロダクトには、いずれ“拠点”が必要になります。
-        </p>
-        <p>その“名前”は、すでにここにあります。</p>
-      </div>
-
-      <footer class="footer">
-        <div>取得のご相談</div>
-        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
-        <div class="lang-toggle" aria-label="Language toggle">
-          <a href="#en">English</a><span class="sep">|</span>
-          <a href="#jp">日本語</a><span class="sep">|</span>
-          <a href="#ko">한국어</a><span class="sep">|</span>
-          <a href="#zh">中文</a>
-        </div>
-      </footer>
-    </div>
-
-    <!-- Korean -->
-    <div id="ko" class="lang" lang="ko">
-      <h1 class="headline">SMARTDEVICES.COM</h1>
-
-      <p class="subhead">차세대 지능형 하드웨어를 대표하는 카테고리 도메인.</p>
-      <p class="context">AI, 하드웨어, 그리고 일상 생활의 교차점에서.</p>
-
-      <div class="rule"></div>
-
-      <div class="body">
-        <p>
-          엣지 AI와 로보틱스부터 헬스케어, 에너지, 소비자 기기까지 —
-          모든 스마트 제품에는 결국 ‘거점’이 필요합니다.
-        </p>
-        <p>그 이름은 이미 여기에 있습니다.</p>
-      </div>
-
-      <footer class="footer">
-        <div>인수 문의</div>
-        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
-        <div class="lang-toggle" aria-label="Language toggle">
-          <a href="#en">English</a><span class="sep">|</span>
-          <a href="#jp">日本語</a><span class="sep">|</span>
-          <a href="#ko">한국어</a><span class="sep">|</span>
-          <a href="#zh">中文</a>
-        </div>
-      </footer>
-    </div>
-
-    <!-- Chinese (Simplified) -->
-    <div id="zh" class="lang" lang="zh-Hans">
-      <h1 class="headline">SMARTDEVICES.COM</h1>
-
-      <p class="subhead">定义下一代智能硬件的品类级域名。</p>
-      <p class="context">位于 AI、硬件与日常生活的交汇处。</p>
-
-      <div class="rule"></div>
-
-      <div class="body">
-        <p>
-          从端侧 AI 与机器人，到健康、能源与消费级设备——
-          每一款智能产品最终都需要一个“归属地”。
-        </p>
-        <p>这个名字，已经在这里。</p>
-      </div>
-
-      <footer class="footer">
-        <div>收购咨询</div>
-        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
-        <div class="lang-toggle" aria-label="Language toggle">
-          <a href="#en">English</a><span class="sep">|</span>
-          <a href="#jp">日本語</a><span class="sep">|</span>
-          <a href="#ko">한국어</a><span class="sep">|</span>
-          <a href="#zh">中文</a>
-        </div>
-      </footer>
-    </div>
-
-    <!-- English (default) -->
-    <div id="en" class="lang default" lang="en">
-      <h1 class="headline">SMARTDEVICES.COM</h1>
-
-      <p class="subhead">The category-defining domain for the next generation of intelligent hardware.</p>
-      <p class="context">At the intersection of AI, hardware, and everyday life.</p>
+      <p class="context">
+        At the intersection of AI, hardware, and everyday life.
+      </p>
 
       <div class="rule"></div>
 
@@ -231,21 +196,64 @@
           From edge AI and robotics to health, energy, and consumer devices —
           every smart product eventually needs a home.
         </p>
-        <p>This one already has the name.</p>
+        <p>
+          This one already has the name.
+        </p>
       </div>
 
+      <p class="scarcity">
+        Premium category domain. One owner. One opportunity.
+      </p>
+
+      <!-- Inquiry Form -->
+      <form class="inquiry" action="/api/inquiry" method="POST">
+        <div class="fields">
+          <input name="name" type="text" placeholder="Name" required>
+          <input name="company" type="text" placeholder="Company" required>
+          <input name="email" type="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Intended use / acquisition context" required></textarea>
+        </div>
+
+        <button type="submit">Request acquisition brief</button>
+        <div class="formnote">Qualified inquiries only. Please include intended use.</div>
+        <p class="status"></p>
+      </form>
+
       <footer class="footer">
-        <div>Available for acquisition</div>
-        <div class="email"><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
-        <div class="lang-toggle" aria-label="Language toggle">
-          <a href="#en">English</a><span class="sep">|</span>
-          <a href="#jp">日本語</a><span class="sep">|</span>
-          <a href="#ko">한국어</a><span class="sep">|</span>
-          <a href="#zh">中文</a>
+        <div><strong>Available for acquisition</strong></div>
+        <div class="email">
+          <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
         </div>
       </footer>
-    </div>
 
-  </section>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.querySelector(".inquiry");
+      if (!form) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const status = form.querySelector(".status");
+        status.textContent = "Sending…";
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+          });
+
+          if (!res.ok) throw new Error("Bad response");
+          status.textContent = "Sent. Thank you — we’ll reply shortly.";
+          form.reset();
+        } catch {
+          status.textContent = "Couldn’t send right now. Please email contact@smartdevices.com.";
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
