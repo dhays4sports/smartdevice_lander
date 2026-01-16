@@ -108,13 +108,16 @@
 
     
     <form class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
-  <input name="name" required>
-  <input name="company" required>
-  <input name="email" type="email" required>
-  <textarea name="message" required></textarea>
+  <input name="name" placeholder="Full name" required>
+  <input name="company" placeholder="Company" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Intended use and acquisition context" required></textarea>
 
-  <input type="hidden" name="_subject" value="SmartDevices.com inquiry" />
-  <input type="text" name="_gotcha" style="display:none" /> <!-- honeypot -->
+  <!-- Prestige email subject -->
+  <input type="hidden" name="_subject" value="SmartDevices.com Acquisition Inquiry" />
+
+  <!-- Honeypot spam protection -->
+  <input type="text" name="_gotcha" style="display:none">
 
   <button type="submit">Request acquisition brief</button>
   <div class="status"></div>
