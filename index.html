@@ -134,7 +134,7 @@
     const form = document.querySelector(".inquiry");
     if (!form) return;
 
-    const ENDPOINT = "/api/inquiry"; // <-- critical
+    const ENDPOINT = "/api/inquiry";
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -147,22 +147,19 @@
           body: new FormData(form),
         });
 
-        // Read response text for debugging (works whether it's JSON or plain text)
-        const text = await res.text();
+        const data = await res.json().catch(() => null);
 
         if (!res.ok) {
-          throw new Error(text || "Bad response");
+          const msg =
+            (data && (data.error || data.detail)) ||
+            "Couldn’t send right now. Please email contact@smartdevices.com.";
+          throw new Error(msg);
         }
 
         if (status) status.textContent = "Sent. Thank you — we’ll reply shortly.";
         form.reset();
       } catch (err) {
-        if (status) {
-          status.textContent =
-            "Couldn’t send right now. Please email contact@smartdevices.com.";
-        }
-
-        // Optional: log the real error so you can see what happened
+        if (status) status.textContent = err.message || "Couldn’t send right now. Please email contact@smartdevices.com.";
         console.error("Inquiry submit failed:", err);
       }
     });
