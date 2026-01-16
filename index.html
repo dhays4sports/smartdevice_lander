@@ -107,21 +107,20 @@
     <p>Only one organization will own the definitive identity of this space.</p>
 
     
-    <form class="inquiry" action="/api/inquiry" method="post">
-      <div class="fields">
-        <input name="name" type="text" placeholder="Name" autocomplete="name" required>
-        <input name="company" type="text" placeholder="Company" autocomplete="organization" required>
-        <input name="email" type="email" placeholder="Email" autocomplete="email" required>
-        <textarea name="message" rows="4" placeholder="Intended use / acquisition context" required></textarea>
-      </div>
+    <form class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
+  <input name="name" required>
+  <input name="company" required>
+  <input name="email" type="email" required>
+  <textarea name="message" required></textarea>
 
-      <button type="submit">Request acquisition brief</button>
-      <div class="formnote">Qualified inquiries only. Please include intended use.</div>
+  <input type="hidden" name="_subject" value="SmartDevices.com inquiry" />
+  <input type="text" name="_gotcha" style="display:none" /> <!-- honeypot -->
 
-      <p class="status" aria-live="polite"></p>
-    </form>
+  <button type="submit">Request acquisition brief</button>
+  <div class="status"></div>
+</form>
 
-
+    
     <footer>
       <div><strong>Inquiries</strong></div>
       <div><a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
