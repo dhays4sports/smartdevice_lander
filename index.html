@@ -13,94 +13,149 @@
   <meta property="og:url" content="https://smartdevices.com/" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
 
-html, body { width: 100%; overflow-x: hidden; }
-    
-    body{
-  margin:0;
-  background:#ffffff;
-  color:#0f0f10;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  min-height:100vh;
-  text-align:center;
-  padding:40px;
+  html, body { width: 100%; overflow-x: hidden; }
 
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;   /* changed */
-}
-    .card{
-  width: 100%;
-  max-width: 860px;
-  margin: auto 0;          /* centers vertically in a safe way */
-}
-    h1{
-  font-size: clamp(32px, 8vw, 56px);
-  letter-spacing: .06em;
-  margin: 0 auto 20px auto;
-  line-height: 1;
-  white-space: nowrap;
-  text-align: center;
-  display: block;
-}
-    .sub{font-size:18px;line-height:1.6;}
-    .note,.scarcity,.steward{margin-top:20px;color:#5a5a5f;letter-spacing:.14em;text-transform:uppercase;font-size:12px;}
-    .body{margin-top:40px;font-size:16px;line-height:1.8;}
-    footer{margin-top:50px;font-size:13px;color:#5a5a5f;}
-    a{color:#5a5a5f;text-decoration:none;}
-  
-    /* Inquiry form */
-    .inquiry{ margin: 34px auto 0; max-width: 520px; }
-    .fields{ display: grid; gap: 10px; }
+  body{
+    margin:0;
+    background:#ffffff;
+    color:#0f0f10;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    min-height:100vh;
+    text-align:center;
+    padding:40px;
 
-    .inquiry input, .inquiry textarea{
-      width: 100%;
-      border: 1px solid rgba(15,15,16,0.12);
-      background: #fff;
-      color: #0f0f10;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font: inherit;
-      font-size: 14px;
-      outline: none;
-      box-sizing: border-box;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
+
+  .card{
+    width: 100%;
+    max-width: 860px;
+    margin: auto 0;
+  }
+
+  h1{
+    width: 100%;
+    font-size: clamp(32px, 8vw, 56px);
+    letter-spacing: .06em;
+    margin: 0 auto 20px auto;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+  }
+
+  .sub{
+    font-size:18px;
+    line-height:1.6;
+  }
+
+  .note,
+  .scarcity,
+  .steward{
+    margin-top:20px;
+    color:#5a5a5f;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+
+  .body{
+    margin-top:40px;
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  footer{
+    margin-top:50px;
+    font-size:13px;
+    color:#5a5a5f;
+  }
+
+  a{
+    color:#5a5a5f;
+    text-decoration:none;
+  }
+
+  /* Inquiry form */
+  .inquiry{
+    margin: 34px auto 0;
+    max-width: 520px;
+  }
+
+  .fields{
+    display: grid;
+    gap: 10px;
+  }
+
+  .inquiry input,
+  .inquiry textarea{
+    width: 100%;
+    border: 1px solid rgba(15,15,16,0.12);
+    background: #fff;
+    color: #0f0f10;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .inquiry textarea{
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .inquiry input:focus,
+  .inquiry textarea:focus{
+    border-color: rgba(15,15,16,0.28);
+  }
+
+  .inquiry button{
+    margin-top: 12px;
+    width: 100%;
+    border: 1px solid rgba(15,15,16,0.16);
+    background: #0f0f10;
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+
+  .inquiry button:hover{ opacity: 0.92; }
+
+  .formnote{
+    margin-top: 10px;
+    color: #5a5a5f;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .status{
+    margin: 10px 0 0;
+    color: #5a5a5f;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Mobile polish */
+  @media (max-width: 480px){
+    body{ padding: 22px; }
+
+    .sub{ font-size:16px; }
+
+    .body{ font-size:15px; }
+
+    .note, .scarcity, .steward{
+      letter-spacing:.12em;
     }
-    .inquiry textarea{ resize: vertical; min-height: 120px; }
-
-    .inquiry input:focus, .inquiry textarea:focus{
-      border-color: rgba(15,15,16,0.28);
-    }
-
-    .inquiry button{
-      margin-top: 12px;
-      width: 100%;
-      border: 1px solid rgba(15,15,16,0.16);
-      background: #0f0f10;
-      color: #fff;
-      border-radius: 12px;
-      padding: 12px 14px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      cursor: pointer;
-    }
-    .inquiry button:hover{ opacity: 0.92; }
-
-    .formnote{
-      margin-top: 10px;
-      color: #5a5a5f;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .status{
-      margin: 10px 0 0;
-      color: #5a5a5f;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-    
-  </style>
+  }
+</style>
 </head>
 
 <body>
