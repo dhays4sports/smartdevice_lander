@@ -107,21 +107,16 @@
     <p>Only one organization will own the definitive identity of this space.</p>
 
     
-    <form class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
-  <input name="name" placeholder="Full name" required>
-  <input name="company" placeholder="Company" required>
-  <input name="email" type="email" placeholder="Email" required>
-  <textarea name="message" placeholder="Intended use and acquisition context" required></textarea>
-
-  <!-- Prestige email subject -->
-  <input type="hidden" name="_subject" value="SmartDevices.com Acquisition Inquiry" />
-
-  <!-- Honeypot spam protection -->
-  <input type="text" name="_gotcha" style="display:none">
+   <form id="inquiry-form" action="https://formspree.io/f/mwvvpgbd" method="POST">
+   <input name="name" required placeholder="Full name" />
+  <input name="company" required placeholder="Company" />
+  <input name="email" type="email" required placeholder="Email" />
+  <textarea name="message" required placeholder="Intended use"></textarea>
 
   <button type="submit">Request acquisition brief</button>
-  <div class="status"></div>
 </form>
+
+<div id="form-status"></div>
 
     
     <footer>
