@@ -43,14 +43,21 @@
 
     .sub{ font-size:18px; line-height:1.6; }
 
-    .note, .scarcity, .steward{
-      margin-top:20px;
-      color:#5a5a5f;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-size:12px;
-    }
+    .note, .steward{
+  margin-top:20px;
+  color:#5a5a5f;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:12px;
+}
 
+.scarcity{
+  margin-top:20px;
+  color: rgba(15,15,16,0.45);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:12px;
+}
     .resource-links{
   margin-top: 22px;
   display: flex;
@@ -78,6 +85,14 @@
   letter-spacing:.12em;
   text-transform:uppercase;
   font-size:12px;
+}
+
+    .form-divider{
+  width: 46%;
+  max-width: 260px;
+  height: 1px;
+  margin: 14px auto 18px;
+  background: rgba(15,15,16,0.10);
 }
 
     .form-panel{
@@ -204,6 +219,7 @@
    <!-- Inquiry Form -->
 <div class="form-panel">
   <div class="note form-title">Confidential acquisition inquiries only.</div>
+  <div class="form-divider"></div>
   <form id="inquiry-form" class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
   <div class="fields">
     <input name="name" required placeholder="Full name" />
