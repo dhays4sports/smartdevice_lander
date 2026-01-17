@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valuation Framework — SMARTDEVICES.COM</title>
+  <meta name="description" content="A buyer-oriented valuation framework for SmartDevices.com — a category-defining domain for the intelligent hardware economy." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Valuation Framework — SMARTDEVICES.COM" />
+  <meta property="og:description" content="A buyer-oriented valuation framework for SmartDevices.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://smartdevices.com/valuation.html" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { width: 100%; overflow-x: hidden; }
+
+    body{
+      margin:0;
+      background:#ffffff;
+      color:#0f0f10;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      min-height:100vh;
+      padding:40px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .card{
+      width: 100%;
+      max-width: 920px;
+      margin: auto 0;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom: 28px;
+    }
+
+    .kicker{
+      color:#5a5a5f;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom: 14px;
+    }
+
+    h1{
+      font-size: clamp(28px, 5.6vw, 44px);
+      letter-spacing: .04em;
+      margin: 0 0 10px 0;
+      line-height: 1.12;
+    }
+
+    .sub{
+      font-size:16px;
+      line-height:1.7;
+      color:#2a2a2f;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 14px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brandlink{
+      text-decoration:none;
+      color:#0f0f10;
+      font-weight: 700;
+      letter-spacing:.06em;
+    }
+
+    .nav{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content:center;
+      margin: 0 auto;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:#5a5a5f;
+      font-size:13px;
+    }
+    .nav a:hover{ text-decoration: underline; }
+
+    .divider{
+      width: 100%;
+      max-width: 560px;
+      height: 1px;
+      margin: 26px auto 0;
+      background: rgba(15,15,16,0.12);
+    }
+
+    .section{
+      margin-top: 34px;
+    }
+
+    .section h2{
+      font-size: 18px;
+      letter-spacing:.06em;
+      margin: 0 0 10px 0;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    p{
+      margin: 0 0 14px 0;
+      color:#2a2a2f;
+      line-height: 1.9;
+      font-size: 15.5px;
+    }
+
+    .panel{
+      border: 1px solid rgba(15,15,16,0.10);
+      background: rgba(15,15,16,0.02);
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .grid{
+      display:grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .item{
+      border: 1px solid rgba(15,15,16,0.10);
+      background: rgba(15,15,16,0.02);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .item h3{
+      margin:0 0 8px 0;
+      font-size: 16px;
+      letter-spacing:.02em;
+      line-height: 1.35;
+    }
+
+    .meta{
+      color:#5a5a5f;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom: 10px;
+    }
+
+    ul{
+      margin: 10px 0 0 0;
+      padding-left: 18px;
+      color:#2a2a2f;
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .disclaimer{
+      margin-top: 18px;
+      color:#5a5a5f;
+      font-size: 12.5px;
+      line-height: 1.8;
+      text-align:center;
+    }
+
+    .cta{
+      margin-top: 34px;
+      text-align:center;
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(15,15,16,0.10);
+      background: rgba(15,15,16,0.02);
+    }
+
+    .cta p{
+      margin: 0 0 14px 0;
+      color:#2a2a2f;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,15,16,0.16);
+      background: #0f0f10;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      letter-spacing:.02em;
+    }
+    .btn:hover{ opacity: 0.92; }
+
+    footer{
+      margin-top: 34px;
+      text-align:center;
+      color:#5a5a5f;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer a{ color:#5a5a5f; text-decoration:none; }
+    footer a:hover{ text-decoration: underline; }
+
+    @media (max-width: 680px){
+      body{ padding: 22px; }
+      .sub{ font-size: 15px; }
+      p, ul{ font-size: 14.5px; }
+      .section h2{ font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <header>
+      <div class="kicker">SMARTDEVICES.COM</div>
+      <h1>Valuation Framework</h1>
+      <div class="sub">
+        This page outlines a buyer-oriented way to think about the value of SmartDevices.com:
+        category ownership, cost-of-acquisition replacement value, and the downside risk of not owning the definitive identity in a high-growth market.
+      </div>
+
+      <div class="topbar">
+        <a class="brandlink" href="/">← Back to SmartDevices.com</a>
+        <nav class="nav" aria-label="Page navigation">
+          <a href="#drivers">Value Drivers</a>
+          <a href="#replacement">Replacement Cost</a>
+          <a href="#strategic">Strategic Value</a>
+          <a href="#timing">Timing</a>
+          <a href="#process">Process</a>
+        </nav>
+      </div>
+
+      <div class="divider"></div>
+    </header>
+
+    <section id="drivers" class="section">
+      <h2>Core Value Drivers</h2>
+      <p>
+        The strongest domains behave less like marketing assets and more like infrastructure: they reduce friction,
+        compress customer acquisition cost, and become a durable advantage in search, partnerships, and category memory.
+      </p>
+
+      <div class="grid">
+        <div class="item">
+          <div class="meta">Driver 1</div>
+          <h3>Category Definition</h3>
+          <p>
+            “Smart devices” is not a niche — it is the umbrella term for connected and intelligent products across consumer, health, energy, and robotics.
+            Owning the category term is a durable advantage in perception and positioning.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="meta">Driver 2</div>
+          <h3>Memorability &amp; Trust</h3>
+          <p>
+            A clean, literal .com name carries instant legitimacy.
+            For buyer journeys involving hardware, safety, and privacy, trust and clarity outperform clever branding.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="meta">Driver 3</div>
+          <h3>Defensibility</h3>
+          <p>
+            Once acquired, this is difficult to “outbrand.” Competitors can build products; they cannot replace the category-defining identity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="replacement" class="section">
+      <h2>Replacement Cost Logic</h2>
+      <p>
+        Buyers often compare a domain purchase to “what would we spend to achieve the same outcome without it?”
+        A category-defining .com can replace years of spend across naming, brand education, SEO, and partnership scaffolding.
+      </p>
+
+      <div class="panel">
+        <p style="margin:0;">
+          <strong>Practical lens:</strong> If a company invests meaningfully in intelligent hardware (R&amp;D, distribution, brand, partnerships),
+          the cost to achieve “category-level recognition” can exceed the cost of acquiring the category identity outright.
+        </p>
+      </div>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="item">
+          <div class="meta">Replacement Costs</div>
+          <h3>What it would take to approximate this asset without owning it</h3>
+          <ul>
+            <li>Naming + legal + brand architecture work</li>
+            <li>Years of brand education to teach the market your name</li>
+            <li>Ongoing paid acquisition to compensate for weak direct intent</li>
+            <li>Partnership programs to borrow trust you don’t inherently own</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategic" class="section">
+      <h2>Strategic Value</h2>
+      <p>
+        SmartDevices.com increases optionality: it can be a brand, a platform, a marketplace, a certification layer,
+        or a distribution hub. In each scenario, the name reduces friction and increases conversion.
+      </p>
+
+      <div class="grid">
+        <div class="item">
+          <div class="meta">Strategic Lens</div>
+          <h3>Downside Avoidance</h3>
+          <p>
+            The cost of not owning the category identity shows up later as fragmented branding, higher CAC, and weaker negotiating posture
+            (partners, OEMs, retailers, and press).
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="meta">Strategic Lens</div>
+          <h3>Market Authority</h3>
+          <p>
+            The ability to credibly say “we are SmartDevices” creates a natural authority position,
+            especially as the category expands and consolidates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="timing" class="section">
+      <h2>Timing &amp; Scarcity</h2>
+      <p>
+        This is a single-owner, globally relevant identity asset. In periods of category acceleration (AI devices, robotics,
+        wearables, smart health), strategic buyers tend to move quickly once internal conviction forms.
+      </p>
+
+      <div class="panel">
+        <p style="margin:0;">
+          <strong>Note:</strong> This page is not a public price quote.
+          Serious buyers typically evaluate fit first, then negotiate privately based on strategic value.
+        </p>
+      </div>
+
+      <div class="disclaimer">
+        For qualified discussions, use the confidential inquiry form on the main page.
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <h2>Process</h2>
+      <div class="grid">
+        <div class="item">
+          <div class="meta">Step 1</div>
+          <h3>Confidential Inquiry</h3>
+          <p>Submit intended use and buyer profile. We respond with availability, process, and next steps.</p>
+        </div>
+
+        <div class="item">
+          <div class="meta">Step 2</div>
+          <h3>Acquisition Brief</h3>
+          <p>Qualified buyers receive a short executive brief and transaction options.</p>
+        </div>
+
+        <div class="item">
+          <div class="meta">Step 3</div>
+          <h3>Secure Transaction</h3>
+          <p>Escrow-based close, fast transfer, and clean documentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <p>
+        If SmartDevices.com aligns with your strategic roadmap, submit a confidential inquiry.
+      </p>
+      <a class="btn" href="/">Return to Inquiry Form</a>
+    </div>
+
+    <footer>
+      <div><strong>SMARTDEVICES.COM</strong></div>
+      <div>Privately held. Discreetly offered.</div>
+      <div style="margin-top:8px;">
+        <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
