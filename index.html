@@ -44,104 +44,103 @@
     .sub{ font-size:18px; line-height:1.6; }
 
     .note, .steward{
-  margin-top:20px;
-  color:#5a5a5f;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size:12px;
-}
+      margin-top:20px;
+      color:#5a5a5f;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
 
-.scarcity{
-  margin-top:20px;
-  color: rgba(15,15,16,0.45);
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size:12px;
-}
+    .scarcity{
+      margin-top:20px;
+      color: rgba(15,15,16,0.45);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+
     .resource-links{
-  margin-top: 22px;
-  margin-bottom: 10px;   
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
-}
+      margin-top: 22px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
 
-.resource-links a{
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #5a5a5f;
-  text-decoration: none;
-}
+    .resource-links a{
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #5a5a5f;
+      text-decoration: none;
+    }
 
-.resource-links a:hover{
-  text-decoration: underline;
-  opacity: 0.85;
-}
+    .resource-links a:hover{
+      text-decoration: underline;
+      opacity: 0.85;
+    }
 
     .confidential-note{
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color:#5a5a5f;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-size:12px;
-}
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color:#5a5a5f;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
 
     .form-divider{
-  width: 46%;
-  max-width: 260px;
-  height: 1px;
-  margin: 12px auto 16px;
-  background: rgba(15,15,16,0.16);
-}
+      width: 46%;
+      max-width: 260px;
+      height: 1px;
+      margin: 12px auto 16px;
+      background: rgba(15,15,16,0.16);
+    }
 
     .form-panel{
-  margin-top: 18px;
-  padding: 22px 24px 24px;
-  border-radius: 20px;
-  background: rgba(15,15,16,0.02);
-  border: 1px solid rgba(15,15,16,0.08);
-  box-shadow: 0 10px 28px rgba(15,15,16,0.04);
-}
+      margin-top: 18px;
+      padding: 22px 24px 24px;
+      border-radius: 20px;
+      background: rgba(15,15,16,0.02);
+      border: 1px solid rgba(15,15,16,0.08);
+      box-shadow: 0 10px 28px rgba(15,15,16,0.04);
+    }
 
-.form-title{
-  margin: 0 0 12px 0;
-  color:#5a5a5f;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-size:12px;
-}
-    
-/* Slightly tighten on mobile */
-@media (max-width: 480px){
-  .form-panel{
-    padding: 22px 18px 20px;
-    border-radius: 14px;
-  }
-}
+    .form-title{
+      margin: 0 0 12px 0;
+      color:#5a5a5f;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
 
-    .body{ 
-  margin-top: 32px; 
-  font-size: 16px; 
-  line-height: 1.72; 
-}
+    /* Slightly tighten on mobile */
+    @media (max-width: 480px){
+      .form-panel{
+        padding: 22px 18px 20px;
+        border-radius: 14px;
+      }
+    }
 
-.body p{
-  margin: 0 0 14px 0;
-}
-    
+    .body{
+      margin-top: 32px;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .body p{ margin: 0 0 14px 0; }
+
     footer{ margin-top:50px; font-size:13px; color:#5a5a5f; }
 
     a{ color:#5a5a5f; text-decoration:none; }
 
     /* Inquiry form */
     .inquiry{
-  margin: 0 auto;
-  max-width: 520px;
-}
+      margin: 0 auto;
+      max-width: 520px;
+    }
 
     .fields{ display: grid; gap: 10px; }
 
@@ -173,19 +172,19 @@
       padding: 12px 14px;
       font-weight: 600;
       letter-spacing: 0.02em;
-      cursor: pointer;
+      cursor:pointer;
     }
 
     .inquiry button:hover{ opacity: 0.92; }
 
     .divider{
-  width: 60%;
-  max-width: 420px;
-  height: 1px;
-  margin: 26px auto;
-  background: rgba(15,15,16,0.12);
-}
-    
+      width: 60%;
+      max-width: 420px;
+      height: 1px;
+      margin: 26px auto;
+      background: rgba(15,15,16,0.12);
+    }
+
     .formnote, .status{
       margin-top: 10px;
       color: #5a5a5f;
@@ -193,14 +192,43 @@
       line-height: 1.6;
     }
 
+    /* New: buyer-framed rationale (no new styling system; uses existing rhythm) */
+    .rationale{
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.75;
+      color:#0f0f10;
+      text-align: left;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rationale .label{
+      margin: 0 0 10px 0;
+      color:#5a5a5f;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:12px;
+      text-align:center;
+    }
+    .rationale ul{
+      margin: 0;
+      padding-left: 18px;
+    }
+    .rationale li{
+      margin: 0 0 10px 0;
+      color: rgba(15,15,16,0.82);
+    }
+    .rationale li:last-child{ margin-bottom: 0; }
+
     /* Mobile polish */
     @media (max-width: 480px){
       body{ padding: 22px; }
       .sub{ font-size:16px; }
       .body{ font-size:15px; }
       .note, .scarcity, .steward{ letter-spacing:.12em; }
+      .rationale{ font-size:14.5px; }
     }
-  
   </style>
 </head>
 
@@ -213,134 +241,147 @@
     <div class="scarcity">A singular digital asset. One owner. Global reach.</div>
 
     <div class="body">
-  <p>From AI and robotics to health, energy, and consumer devices — the smart device category is becoming the defining interface layer of the modern economy.</p>
-  <p>SMARTDEVICES.COM represents the definitive digital identity for this category.</p>
-</div>
+      <p>From AI and robotics to health, energy, and consumer devices — the smart device category is becoming the defining interface layer of the modern economy.</p>
+      <p><strong>SmartDevices.com represents the definitive digital identity for the global smart device category.</strong></p>
+    </div>
 
     <div class="divider"></div>
 
-  <div class="steward">Stewardship Opportunity</div>
+    <div class="steward">Stewardship Opportunity</div>
     <p>Only one organization will own the definitive identity of this space.</p>
 
-    <div class="resource-links">
-  <a href="/strategy.html">Strategic Use Cases →</a>
-  <a href="/valuation.html">Valuation Framework →</a>
-</div>
-    
-   <!-- Inquiry Form -->
-<div class="form-panel">
-  <div class="note form-title">Confidential acquisition inquiries only.</div>
-  <div class="form-divider"></div>
-  <form id="inquiry-form" class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
-  <div class="fields">
-    <input name="name" required placeholder="Full name" />
-    <input name="company" required placeholder="Company" />
-    <input name="email" type="email" required placeholder="Email" />
-    <textarea name="message" required placeholder="Acquisition context"></textarea>
-  </div>
+    <!-- Buyer-framed rationale (small, high leverage) -->
+    <div class="rationale">
+      <div class="label">Strategic Acquisition Rationale</div>
+      <ul>
+        <li><strong>For Fortune 500 manufacturers:</strong> category ownership across intelligent hardware, IoT, and consumer devices.</li>
+        <li><strong>For platform operators:</strong> a canonical namespace for aggregation, discovery, and ecosystem control.</li>
+        <li><strong>For infrastructure builders:</strong> a neutral identity layer spanning devices, data, and intelligence.</li>
+      </ul>
+    </div>
 
-  <!-- Tracking fields -->
-  <input type="hidden" name="cf_country" />
-  <input type="hidden" name="cf_colo" />
-  <input type="hidden" name="visitor_ip" />
-  <input type="hidden" name="utm_source" />
-  <input type="hidden" name="utm_medium" />
-  <input type="hidden" name="utm_campaign" />
-  <input type="hidden" name="utm_term" />
-  <input type="hidden" name="utm_content" />
-  <input type="hidden" name="referrer" />
-  <input type="hidden" name="landing_url" />
-  <input type="hidden" name="user_agent" />
-  <input type="hidden" name="timezone" />
-  <input type="hidden" name="language" />
+    <!-- Secondary resources (kept, clearly secondary) -->
+    <div class="resource-links" aria-label="Resources">
+      <a href="/strategy.html">Strategic Use Cases →</a>
+      <a href="/valuation.html">Valuation Framework →</a>
+    </div>
 
-  <input type="hidden" name="_subject" value="SmartDevices.com Acquisition Inquiry" />
-  <input type="hidden" name="_next" value="https://smartdevices.com/thanks.html" />
-  <input type="text" name="_gotcha" style="display:none" />
+    <!-- Primary path micro (subtle) -->
+    <div class="confidential-note">Primary acquisition path: submit an executive inquiry below.</div>
 
-  <button type="submit">Request Acquisition Brief</button>
-  <div class="status"></div>
-  <div class="formnote">Qualified acquisition inquiries only.</div>
-</form>
-  </form>
-</div>
+    <!-- Inquiry Form -->
+    <div class="form-panel">
+      <div class="note form-title">Confidential acquisition inquiries only.</div>
+      <div class="form-divider"></div>
+
+      <form id="inquiry-form" class="inquiry" action="https://formspree.io/f/mwvvpgbd" method="POST">
+        <div class="fields">
+          <input name="name" required placeholder="Full name" />
+          <input name="company" required placeholder="Company" />
+          <input name="email" type="email" required placeholder="Email" />
+          <textarea name="message" required placeholder="Acquisition context"></textarea>
+        </div>
+
+        <!-- Tracking fields -->
+        <input type="hidden" name="cf_country" />
+        <input type="hidden" name="cf_colo" />
+        <input type="hidden" name="visitor_ip" />
+        <input type="hidden" name="utm_source" />
+        <input type="hidden" name="utm_medium" />
+        <input type="hidden" name="utm_campaign" />
+        <input type="hidden" name="utm_term" />
+        <input type="hidden" name="utm_content" />
+        <input type="hidden" name="referrer" />
+        <input type="hidden" name="landing_url" />
+        <input type="hidden" name="user_agent" />
+        <input type="hidden" name="timezone" />
+        <input type="hidden" name="language" />
+
+        <input type="hidden" name="_subject" value="SmartDevices.com Acquisition Inquiry" />
+        <input type="hidden" name="_next" value="https://smartdevices.com/thanks.html" />
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <!-- ✅ One primary CTA only -->
+        <button type="submit">Request Acquisition Brief</button>
+
+        <div class="status"></div>
+        <div class="formnote">Qualified acquisition inquiries only.</div>
+      </form>
+    </div>
+
     <footer>
-  <div>Acquisition inquiries: <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
-  <div>Qualified buyers only.</div>
-</footer>
+      <div>Acquisition inquiries: <a href="mailto:contact@smartdevices.com">contact@smartdevices.com</a></div>
+      <div>Qualified buyers only.</div>
+    </footer>
   </div>
 
   <script>
-(function () {
-  const form = document.getElementById("inquiry-form");
-  if (!form) return;
+  (function () {
+    const form = document.getElementById("inquiry-form");
+    if (!form) return;
 
-  const status = form.querySelector(".status");
+    const status = form.querySelector(".status");
 
-  const setVal = (name, value) => {
-    const el = form.querySelector(`[name="${name}"]`);
-    if (el) el.value = value || "";
-  };
+    const setVal = (name, value) => {
+      const el = form.querySelector(`[name="${name}"]`);
+      if (el) el.value = value || "";
+    };
 
-  // UTMs
-  const params = new URLSearchParams(location.search);
-  ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(k => {
-    setVal(k, params.get(k));
-  });
+    // UTMs
+    const params = new URLSearchParams(location.search);
+    ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(k => {
+      setVal(k, params.get(k));
+    });
 
-  // Attribution
-  setVal("referrer", document.referrer || "");
-  setVal("landing_url", location.href);
-  setVal("user_agent", navigator.userAgent || "");
-  setVal("timezone", Intl.DateTimeFormat().resolvedOptions().timeZone || "");
-  setVal("language", navigator.language || "");
+    // Attribution
+    setVal("referrer", document.referrer || "");
+    setVal("landing_url", location.href);
+    setVal("user_agent", navigator.userAgent || "");
+    setVal("timezone", Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+    setVal("language", navigator.language || "");
 
-  // Cloudflare geo
-  fetch("/cdn-cgi/trace", { cache: "no-store" })
-    .then(r => r.text())
-    .then(txt => {
-      const map = {};
-      txt.trim().split("\n").forEach(line => {
-        const i = line.indexOf("=");
-        if (i > 0) map[line.slice(0, i)] = line.slice(i + 1);
-      });
-      setVal("cf_country", map.loc || "");
-      setVal("cf_colo", map.colo || "");
-      setVal("visitor_ip", map.ip || "");
-    })
-    .catch(()=>{});
+    // Cloudflare geo
+    fetch("/cdn-cgi/trace", { cache: "no-store" })
+      .then(r => r.text())
+      .then(txt => {
+        const map = {};
+        txt.trim().split("\n").forEach(line => {
+          const i = line.indexOf("=");
+          if (i > 0) map[line.slice(0, i)] = line.slice(i + 1);
+        });
+        setVal("cf_country", map.loc || "");
+        setVal("cf_colo", map.colo || "");
+        setVal("visitor_ip", map.ip || "");
+      })
+      .catch(()=>{});
 
-  // Redirect URL (your thank-you page)
-  const NEXT_URL = "https://smartdevices.com/thanks.html";
+    const NEXT_URL = "https://smartdevices.com/thanks.html";
 
-  // Submit handler
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (status) status.textContent = "Sending…";
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (status) status.textContent = "Sending…";
 
-    try {
-      const res = await fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
-      });
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
 
-      if (!res.ok) throw new Error("Bad response");
+        if (!res.ok) throw new Error("Bad response");
 
-      if (status) status.textContent = "Sent. Redirecting…";
-      form.reset();
+        if (status) status.textContent = "Sent. Redirecting…";
+        form.reset();
+        window.location.href = NEXT_URL;
 
-      // ✅ Redirect to thank-you page
-      window.location.href = NEXT_URL;
-
-    } catch (err) {
-      if (status) status.textContent =
-        "Couldn’t send right now. Please email contact@smartdevices.com.";
-      console.error("Inquiry submit failed:", err);
-    }
-  });
-})();
-</script>
+      } catch (err) {
+        if (status) status.textContent =
+          "Couldn’t send right now. Please email contact@smartdevices.com.";
+        console.error("Inquiry submit failed:", err);
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>
