@@ -59,13 +59,14 @@
       font-size:12px;
     }
 
+    /* Micro-suggestion A/B: soften hero representation so it doesn't compete with footer stamp */
     .representation{
-  margin-top: 10px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(15,15,16,0.38);
-}
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(15,15,16,0.38);
+    }
 
     .resource-links{
       margin-top: 22px;
@@ -140,10 +141,6 @@
 
     .body p{ margin: 0 0 14px 0; }
 
-    footer{ margin-top:50px; font-size:13px; color:#5a5a5f; }
-
-    a{ color:#5a5a5f; text-decoration:none; }
-
     /* Inquiry form */
     .inquiry{
       margin: 0 auto;
@@ -200,7 +197,7 @@
       line-height: 1.6;
     }
 
-    /* New: buyer-framed rationale (no new styling system; uses existing rhythm) */
+    /* Buyer-framed rationale */
     .rationale{
       margin-top: 18px;
       font-size: 15px;
@@ -230,54 +227,49 @@
     .rationale li:last-child{ margin-bottom: 0; }
 
     /* === SmartDevices.com — Representation Footer === */
-.asset-footer{
-  margin-top: 50px;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.7;
-  color: #5a5a5f;
-}
+    .asset-footer{
+      margin-top: 50px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #5a5a5f;
+    }
 
-.footer-contact{
-  margin-bottom: 8px;
-}
+    .footer-contact{
+      margin-bottom: 8px;
+    }
 
-.footer-contact a{
-  color: inherit;
-  text-decoration: none;
-}
+    .footer-contact a{
+      color: inherit;
+      text-decoration: none;
+    }
 
-.footer-contact a:hover{
-  text-decoration: underline;
-}
+    .footer-contact a:hover{
+      text-decoration: underline;
+    }
 
-.footer-rep{
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-top: 8px;     /* ⬅️ add this */
-  margin-bottom: 4px;
-  color: rgba(15,15,16,0.55);
-}
+    .footer-rep{
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      color: rgba(15,15,16,0.55);
+    }
 
-    .footer-rep strong{
-  font-weight: 600;                 /* slightly stronger, not heavy */
-  color: rgba(15,15,16,0.75);        /* a touch darker than the rest */
-  letter-spacing: 0.12em;            /* tighten slightly vs container */
-}
+    .footer-rep .rep-brand{
+      font-weight: 600;
+      color: rgba(15,15,16,0.75);
+      letter-spacing: 0.12em;
+    }
 
-.footer-rep .rep-brand{
-  font-weight: 600;
-  letter-spacing: 0.16em;
-}
+    .footer-qualifier{
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(15,15,16,0.45);
+    }
 
-.footer-qualifier{
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(15,15,16,0.45);
-}
-    
     /* Mobile polish */
     @media (max-width: 480px){
       body{ padding: 22px; }
@@ -285,6 +277,7 @@
       .body{ font-size:15px; }
       .note, .scarcity, .steward{ letter-spacing:.12em; }
       .rationale{ font-size:14.5px; }
+      .resource-links a{ letter-spacing: .16em; } /* tiny usability tweak */
     }
   </style>
 </head>
@@ -295,13 +288,11 @@
     <div class="sub">The category-defining domain for the next generation of intelligent hardware.</div>
 
     <div class="note">Privately held. Discreetly offered.</div>
-<div class="scarcity">
-  A singular digital asset. One owner. Global reach.
-</div>
 
-<div class="representation">
-  Representation: AssetsNow.
-</div>
+    <div class="scarcity">A singular digital asset. One owner. Global reach.</div>
+
+    <!-- Micro-suggestion A/B: make representation metadata, not a second stamp -->
+    <div class="representation">Representation: AssetsNow.</div>
 
     <div class="body">
       <p>From AI and robotics to health, energy, and consumer devices — the smart device category is becoming the defining interface layer of the modern economy.</p>
@@ -313,7 +304,6 @@
     <div class="steward">Stewardship Opportunity</div>
     <p>Only one organization will own the definitive identity of this space.</p>
 
-    <!-- Buyer-framed rationale (small, high leverage) -->
     <div class="rationale">
       <div class="label">Strategic Acquisition Rationale</div>
       <ul>
@@ -323,10 +313,8 @@
       </ul>
     </div>
 
-    <!-- Primary path micro (subtle) -->
     <div class="confidential-note">Primary acquisition path: submit an executive inquiry below.</div>
 
-    <!-- Inquiry Form -->
     <div class="form-panel">
       <div class="note form-title">Confidential acquisition inquiries only.</div>
       <div class="form-divider"></div>
@@ -358,33 +346,32 @@
         <input type="hidden" name="_next" value="https://smartdevices.com/thanks.html" />
         <input type="text" name="_gotcha" style="display:none" />
 
-        <!-- ✅ One primary CTA only -->
         <button type="submit">Request Acquisition Brief</button>
 
-        <div class="status"></div>
+        <div class="status" aria-live="polite"></div>
         <div class="formnote">Qualified acquisition inquiries only.</div>
       </form>
     </div>
-    <!-- Secondary resources (post-conversion, non-competing) -->
-<div class="resource-links" aria-label="Secondary resources">
-  <a href="/strategy.html">View Strategic Rationale →</a>
-  <a href="/valuation.html">View Valuation Context →</a>
-</div>
-    
+
+    <div class="resource-links" aria-label="Secondary resources">
+      <a href="/strategy.html">View Strategic Rationale →</a>
+      <a href="/valuation.html">View Valuation Context →</a>
+    </div>
+
     <footer class="asset-footer">
-  <div class="footer-contact">
-    Acquisition inquiries:
-    <a href="mailto:contact@assetsnow.com">contact@assetsnow.com</a>
-  </div>
+      <div class="footer-contact">
+        Acquisition inquiries:
+        <a href="mailto:contact@assetsnow.com">contact@assetsnow.com</a>
+      </div>
 
-  <div class="footer-rep">
-    Represented by <span class="rep-brand">AssetsNow</span>
-  </div>
+      <div class="footer-rep">
+        Represented by <span class="rep-brand">AssetsNow</span>
+      </div>
 
-  <div class="footer-qualifier">
-    Qualified buyers only.
-  </div>
-</footer>
+      <div class="footer-qualifier">
+        Qualified buyers only.
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -454,6 +441,5 @@
     });
   })();
   </script>
-
 </body>
 </html>
