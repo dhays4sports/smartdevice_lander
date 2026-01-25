@@ -59,6 +59,14 @@
       font-size:12px;
     }
 
+    .representation{
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15,15,16,0.38);
+}
+
     .resource-links{
       margin-top: 22px;
       margin-bottom: 10px;
@@ -244,12 +252,18 @@
 }
 
 .footer-rep{
-  margin-top: 12px;
-  margin-bottom: 6px;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  margin-top: 8px;     /* ⬅️ add this */
+  margin-bottom: 4px;
   color: rgba(15,15,16,0.55);
+}
+
+    .footer-rep strong{
+  font-weight: 600;                 /* slightly stronger, not heavy */
+  color: rgba(15,15,16,0.75);        /* a touch darker than the rest */
+  letter-spacing: 0.12em;            /* tighten slightly vs container */
 }
 
 .footer-rep .rep-brand{
@@ -281,8 +295,13 @@
     <div class="sub">The category-defining domain for the next generation of intelligent hardware.</div>
 
     <div class="note">Privately held. Discreetly offered.</div>
-<div class="scarcity">A singular digital asset. One owner. Global reach.</div>
-<div class="note">Represented by AssetsNow.</div>
+<div class="scarcity">
+  A singular digital asset. One owner. Global reach.
+</div>
+
+<div class="representation">
+  Representation: AssetsNow.
+</div>
 
     <div class="body">
       <p>From AI and robotics to health, energy, and consumer devices — the smart device category is becoming the defining interface layer of the modern economy.</p>
