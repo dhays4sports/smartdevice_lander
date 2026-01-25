@@ -221,6 +221,43 @@
     }
     .rationale li:last-child{ margin-bottom: 0; }
 
+    /* === SmartDevices.com — Representation Footer === */
+.asset-footer{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #5a5a5f;
+}
+
+.footer-contact{
+  margin-bottom: 6px;
+}
+
+.footer-contact a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-contact a:hover{
+  text-decoration: underline;
+}
+
+.footer-rep{
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: rgba(15,15,16,0.55);
+}
+
+.footer-qualifier{
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15,15,16,0.45);
+}
+    
     /* Mobile polish */
     @media (max-width: 480px){
       body{ padding: 22px; }
@@ -309,10 +346,20 @@
   <a href="/valuation.html">View Valuation Context →</a>
 </div>
     
-    <footer>
-     <div>Acquisition inquiries: <a href="mailto:contact@assetsnow.com">contact@assetsnow.com</a></div>
-<div>Represented by AssetsNow · Qualified buyers only.</div>
-    </footer>
+    <footer class="asset-footer">
+  <div class="footer-contact">
+    Acquisition inquiries:
+    <a href="mailto:contact@assetsnow.com">contact@assetsnow.com</a>
+  </div>
+
+  <div class="footer-rep">
+    Represented by <strong>AssetsNow</strong>
+  </div>
+
+  <div class="footer-qualifier">
+    Qualified buyers only.
+  </div>
+</footer>
   </div>
 
   <script>
