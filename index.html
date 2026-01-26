@@ -72,275 +72,160 @@
 </script>
   
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { width: 100%; overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { width: 100%; overflow-x: hidden; }
 
-    body{
-      margin:0;
-      background:#ffffff;
-      color:#0f0f10;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      min-height:100vh;
-      text-align:center;
-      padding:40px;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-    }
+  body{
+    margin:0;
+    background:#ffffff;
+    color:#0f0f10;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    min-height:100vh;
+    text-align:center;
+    padding:40px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
 
-    .card{ width: 100%; max-width: 860px; margin: auto 0; }
+  .card{ width: 100%; max-width: 860px; margin: auto 0; }
 
-    h1{
-      width: 100%;
-      font-size: clamp(32px, 8vw, 56px);
-      letter-spacing: .06em;
-      margin: 0 auto 20px auto;
-      line-height: 1;
-      white-space: nowrap;
-      text-align: center;
-    }
+  h1{
+    width: 100%;
+    font-size: clamp(32px, 8vw, 56px);
+    letter-spacing: .06em;
+    margin: 0 auto 20px auto;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+  }
 
-    .sub{
-  font-size:18px;
-  line-height:1.55;
-  margin: 0;
-}
+  .sub{
+    font-size:18px;
+    line-height:1.55;
+    margin: 0;
+  }
 
-    .note, .steward{
-  margin-top:14px; /* was 20px */
-  color:#5a5a5f;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size:12px;
-}
+  .note, .steward{
+    margin-top:14px;
+    color:#5a5a5f;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
 
-    .scarcity{
-  margin-top:12px; /* was 20px */
-  color: rgba(15,15,16,0.45);
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size:12px;
-}
+  .scarcity{
+    margin-top:12px;
+    color: rgba(15,15,16,0.45);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
 
-    .resource-links{
-      margin-top: 22px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
+  .resource-links{
+    margin-top: 22px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
 
-    .resource-links a{
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: #5a5a5f;
-      text-decoration: none;
-    }
+  .resource-links a{
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #5a5a5f;
+    text-decoration: none;
+  }
 
-    .resource-links a:hover{
-      text-decoration: underline;
-      opacity: 0.85;
-    }
+  .resource-links a:hover{
+    text-decoration: underline;
+    opacity: 0.85;
+  }
 
-    .confidential-note{
-      margin-top: 20px;
-      margin-bottom: 10px;
-      color:#5a5a5f;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-size:12px;
-    }
+  .confidential-note{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color:#5a5a5f;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
 
-    .form-divider{
-      width: 46%;
-      max-width: 260px;
-      height: 1px;
-      margin: 12px auto 16px;
-      background: rgba(15,15,16,0.16);
-    }
+  .divider{
+    width: 60%;
+    max-width: 420px;
+    height: 1px;
+    margin: 26px auto;
+    background: rgba(15,15,16,0.12);
+  }
 
-    .form-panel{
-      margin-top: 18px;
-      padding: 22px 24px 24px;
-      border-radius: 20px;
-      background: rgba(15,15,16,0.02);
-      border: 1px solid rgba(15,15,16,0.08);
-      box-shadow: 0 10px 28px rgba(15,15,16,0.04);
-    }
+  .body{
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
 
-    .form-title{
-      margin: 0 0 12px 0;
-      color:#5a5a5f;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-size:12px;
-    }
+  .body p{ margin: 0 0 14px 0; }
 
-    /* Slightly tighten on mobile */
-    @media (max-width: 480px){
-      .form-panel{
-        padding: 22px 18px 20px;
-        border-radius: 14px;
-      }
-    }
+  /* ================================
+     Institutional Asset Footer
+     (Identity.now canonical style)
+     ================================ */
 
-    .body{
-      margin-top: 32px;
-      font-size: 16px;
-      line-height: 1.72;
-    }
+  .asset-footer{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #5a5a5f;
+  }
 
-    .body p{ margin: 0 0 14px 0; }
+  .asset-footer .asset-inquiry{
+    margin-bottom: 8px;
+  }
 
-    /* Inquiry form */
-    .inquiry{
-      margin: 0 auto;
-      max-width: 520px;
-    }
+  .asset-footer .asset-inquiry a{
+    color: inherit;
+    text-decoration: none;
+  }
 
-    .fields{ display: grid; gap: 10px; }
+  .asset-footer .asset-inquiry a:hover{
+    text-decoration: underline;
+  }
 
-    .inquiry input, .inquiry textarea{
-      width: 100%;
-      border: 1px solid rgba(15,15,16,0.12);
-      background: #fff;
-      color: #0f0f10;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font: inherit;
-      font-size: 14px;
-      outline: none;
-    }
+  .asset-footer .asset-rep{
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: rgba(15,15,16,0.55);
+  }
 
-    .inquiry textarea{ resize: vertical; min-height: 120px; }
+  .asset-footer .asset-rep strong{
+    font-weight: 600;
+    color: rgba(15,15,16,0.75);
+    letter-spacing: .12em;
+  }
 
-    .inquiry input:focus, .inquiry textarea:focus{
-      border-color: rgba(15,15,16,0.28);
-    }
+  .asset-footer .asset-qualifier{
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(15,15,16,0.45);
+  }
 
-    .inquiry button{
-      margin-top: 12px;
-      width: 100%;
-      border: 1px solid rgba(15,15,16,0.16);
-      background: #0f0f10;
-      color: #fff;
-      border-radius: 12px;
-      padding: 12px 14px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      cursor:pointer;
-    }
-
-    .inquiry button:hover{ opacity: 0.92; }
-
-    .divider{
-      width: 60%;
-      max-width: 420px;
-      height: 1px;
-      margin: 26px auto;
-      background: rgba(15,15,16,0.12);
-    }
-
-    .formnote, .status{
-      margin-top: 10px;
-      color: #5a5a5f;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    /* Buyer-framed rationale */
-    .rationale{
-      margin-top: 18px;
-      font-size: 15px;
-      line-height: 1.75;
-      color:#0f0f10;
-      text-align: left;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .rationale .label{
-      margin: 0 0 10px 0;
-      color:#5a5a5f;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-size:12px;
-      text-align:center;
-    }
-    .rationale ul{
-      margin: 0;
-      padding-left: 18px;
-    }
-    .rationale li{
-      margin: 0 0 10px 0;
-      color: rgba(15,15,16,0.82);
-    }
-    .rationale li:last-child{ margin-bottom: 0; }
-
-    /* === Asset Representation Footer (AssetsNow) === */
-.asset-footer{
-  margin-top: 56px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(15,15,16,0.12);
-  text-align: center;
-  line-height: 1.7;
-}
-
-/* Inquiry line */
-.asset-footer .asset-inquiry{
-  font-size: 13px;
-  color: #5a5a5f;
-  margin-bottom: 6px;
-}
-
-.asset-footer .asset-inquiry a{
-  color: #0f0f10;
-  text-decoration: none;
-}
-
-.asset-footer .asset-inquiry a:hover{
-  text-decoration: underline;
-}
-
-/* Representation line */
-.asset-footer .asset-rep{
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: rgba(15,15,16,0.72);
-  margin-bottom: 4px;
-}
-
-/* Scarcity qualifier */
-.asset-footer .asset-qualifier{
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(15,15,16,0.45);
-}
-
-/* Optional micro-line (DomainElevation) */
-.asset-footer .asset-micro{
-  margin-top: 12px;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: rgba(15,15,16,0.38);
-}
-
-    /* Mobile polish */
-    @media (max-width: 480px){
-      body{ padding: 22px; }
-      .sub{ font-size:16px; }
-      .body{ font-size:15px; }
-      .note, .scarcity, .steward{ letter-spacing:.12em; }
-      .rationale{ font-size:14.5px; }
-      .resource-links a{ letter-spacing: .16em; } /* tiny usability tweak */
-    }
-  </style>
+  /* Mobile refinement */
+  @media (max-width: 480px){
+    body{ padding: 22px; }
+    .sub{ font-size:16px; }
+    .body{ font-size:15px; }
+    .note, .scarcity, .steward{ letter-spacing:.12em; }
+  }
+</style>
 </head>
 
 <body>
