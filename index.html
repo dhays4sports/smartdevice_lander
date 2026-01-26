@@ -280,57 +280,56 @@
     }
     .rationale li:last-child{ margin-bottom: 0; }
 
-    /* === SmartDevices.com — Representation Footer === */
-    .asset-footer{
-      margin-top: 50px;
-      text-align: center;
-      font-size: 13px;
-      line-height: 1.7;
-      color: #5a5a5f;
-    }
+    /* === Asset Representation Footer (AssetsNow) === */
+.asset-footer{
+  margin-top: 56px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(15,15,16,0.12);
+  text-align: center;
+  line-height: 1.7;
+}
 
-    .footer-contact{
-      margin-bottom: 8px;
-    }
+/* Inquiry line */
+.asset-footer .asset-inquiry{
+  font-size: 13px;
+  color: #5a5a5f;
+  margin-bottom: 6px;
+}
 
-    .footer-contact a{
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .footer-contact a:hover{
-      text-decoration: underline;
-    }
-
-    .footer-rep{
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-top: 8px;
-      margin-bottom: 4px;
-      color: rgba(15,15,16,0.55);
-    }
-
-    .footer-rep a{
-  color: inherit;
+.asset-footer .asset-inquiry a{
+  color: #0f0f10;
   text-decoration: none;
 }
-.footer-rep a:hover{
+
+.asset-footer .asset-inquiry a:hover{
   text-decoration: underline;
 }
 
-    .footer-rep .rep-brand{
-      font-weight: 600;
-      color: rgba(15,15,16,0.75);
-      letter-spacing: 0.12em;
-    }
+/* Representation line */
+.asset-footer .asset-rep{
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(15,15,16,0.72);
+  margin-bottom: 4px;
+}
 
-    .footer-qualifier{
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(15,15,16,0.45);
-    }
+/* Scarcity qualifier */
+.asset-footer .asset-qualifier{
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15,15,16,0.45);
+}
+
+/* Optional micro-line (DomainElevation) */
+.asset-footer .asset-micro{
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(15,15,16,0.38);
+}
 
     /* Mobile polish */
     @media (max-width: 480px){
@@ -428,22 +427,24 @@
     </div>
 
     <footer class="asset-footer">
-      <div class="footer-contact">
-        Acquisition inquiries:
-        <a href="mailto:contact@assetsnow.com">contact@assetsnow.com</a>
-      </div>
+  <p class="asset-inquiry">
+    Acquisition inquiries:
+    <a href="mailto:contact@assetsnow.com">contact@assetsnow.com</a>
+  </p>
 
-      <div class="footer-rep">
-  Represented by
-  <a href="https://assetsnow.com" class="rep-brand" target="_blank" rel="noopener">
-    AssetsNow
-  </a>
-</div>
+  <p class="asset-rep">
+    Represented by AssetsNow
+  </p>
 
-      <div class="footer-qualifier">
-        Qualified buyers only.
-      </div>
-    </footer>
+  <p class="asset-qualifier">
+    Qualified buyers only.
+  </p>
+
+  <!-- Optional micro-line -->
+  <p class="asset-micro">
+    Portfolio intelligence stewarded under DomainElevation
+  </p>
+</footer>
   </div>
 
   <script>
