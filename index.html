@@ -280,52 +280,68 @@
     }
     .rationale li:last-child{ margin-bottom: 0; }
 
-    /* ================================
-     Institutional Asset Footer
-     (Identity.now canonical style)
-     ================================ */
+    /* =========================================
+   Institutional Asset Footer (identity.now)
+   ========================================= */
 
+.asset-footer{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #5a5a5f;
+}
+
+.footer-contact{
+  margin-bottom: 8px;
+}
+
+.footer-contact a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-contact a:hover{
+  text-decoration: underline;
+}
+
+/* Representation line */
+.footer-rep{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  color: rgba(15,15,16,0.55);
+}
+
+.footer-rep a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-rep a:hover{
+  text-decoration: underline;
+}
+
+.footer-rep .rep-brand{
+  font-weight: 600;
+  color: rgba(15,15,16,0.75);
+  letter-spacing: .12em;
+}
+
+/* Qualification line */
+.footer-qualifier{
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(15,15,16,0.45);
+}
+
+/* Mobile tightening */
+@media (max-width: 480px){
   .asset-footer{
-    margin-top: 50px;
-    text-align: center;
-    font-size: 13px;
-    line-height: 1.7;
-    color: #5a5a5f;
-  }
-
-  .asset-footer .asset-inquiry{
-    margin-bottom: 8px;
-  }
-
-  .asset-footer .asset-inquiry a{
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .asset-footer .asset-inquiry a:hover{
-    text-decoration: underline;
-  }
-
-  .asset-footer .asset-rep{
-    font-size: 12px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    margin-top: 8px;
-    margin-bottom: 4px;
-    color: rgba(15,15,16,0.55);
-  }
-
-  .asset-footer .asset-rep strong{
-    font-weight: 600;
-    color: rgba(15,15,16,0.75);
-    letter-spacing: .12em;
-  }
-
-  .asset-footer .asset-qualifier{
-    font-size: 12px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(15,15,16,0.45);
+    margin-top: 42px;
   }
 
     /* Mobile polish */
